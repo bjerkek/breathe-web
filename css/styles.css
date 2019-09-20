@@ -1,0 +1,194 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Ubuntu', sans-serif;
+  color: #333333;
+  height: 100%;
+  position:relative;
+}
+
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+main {
+  position: relative;
+  height: 100%;
+}
+
+.text-content {
+  max-width: 400px;
+  padding: 40px;
+  margin: 0 auto;
+  transition: opacity 1s ease-in-out;
+  line-height: 1.5;
+}
+
+.button {
+  font-size: 1em;
+  background-color: #faada9;
+  background: linear-gradient(270deg, #faaca8, #ddd6f3);
+  padding: 20px;
+  border-radius: 4px;
+  border: none;
+  color: #FFF;
+  cursor: pointer;
+  outline: none;
+  width: 100%;
+  box-shadow: 0px 5px 10px #e6e6e6;
+  margin-top: 20px;
+}
+
+button {
+  transition: all .1s linear;
+}
+button:active {
+  box-shadow: 0 2px 0 #e6e6e6;
+  transform: translateY(3px);
+}
+
+circle {
+  transition: all 3s linear;
+}
+
+.intro {
+  opacity: 1;
+}
+
+.instructions {
+  opacity: 0;
+  display: none;
+}
+
+.timer {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  left: 50%;
+  margin-left: -100px;
+  top: 50%;
+  margin-top: -100px;
+  opacity: 0;
+  display: none;
+}
+
+.timer-bg {
+  background-color: #FFF;
+  transition: all 2s linear;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  height: 0;
+  width: 0;
+  border-radius: 100px;
+}
+
+.fade-out {
+  animation: fade-out 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+    height:0;
+    padding: 40px;
+    position: relative;
+  }
+  100% {
+    opacity: 0;
+    height: 0;
+    padding: 0px;
+    position: absolute;
+  }
+}
+
+.fade-in {
+  opacity: 1;
+  animation: fade-in 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.bg-animated {
+  background: linear-gradient(270deg, #faaca8, #ddd6f3);
+  background-size: 400% 400%;
+
+  -webkit-animation: Almost 19s ease infinite;
+  -moz-animation: Almost 19s ease infinite;
+  animation: Almost 19s ease infinite;
+}
+
+@-webkit-keyframes Almost {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@-moz-keyframes Almost {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@keyframes Almost {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+.btn {
+  position: absolute;
+  left: 50%;
+  margin-left: -20px;
+  top: 50%;
+  margin-top: -20px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: border 0.1s ease-in-out;
+}
+
+.btn .bar {
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  width: 3px;
+  height: 20px;
+  border-radius: 3px;
+  background-color: #333333;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  transition: background 0.1s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out, background 0.1s ease-in-out;
+  transition: transform 0.4s ease-in-out, background 0.1s ease-in-out, -webkit-transform 0.4s ease-in-out;
+}
+.btn.pause .bar-1 {
+  -webkit-transform: translateX(13.5px) translateY(0px) rotate(0deg);
+          transform: translateX(13.5px) translateY(0px) rotate(0deg);
+}
+.btn.pause .bar-2 {
+  -webkit-transform: translateX(24px) translateY(0px) rotate(0deg);
+          transform: translateX(24px) translateY(0px) rotate(0deg);
+}
+.btn.play .bar-1 {
+  -webkit-transform: translateX(20px) translateY(-5px) rotate(-55deg);
+          transform: translateX(20px) translateY(-5px) rotate(-55deg);
+}
+.btn.play .bar-2 {
+  -webkit-transform: translateX(20px) translateY(5px) rotate(-125deg);
+          transform: translateX(20px) translateY(5px) rotate(-125deg);
+}

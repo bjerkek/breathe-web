@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/styles.css">
+  <title>Breathe</title>
+</head>
+<body>
+  <div class="timer-bg"></div>
+  
+  <main>
+    <div id="" class="intro text-content">
+      <h1>Let's take a moment and breathe</h1>
+      <p>
+        We all need to pause every now and then.
+        <br /><br />
+        Taking a few minutes during the day and just let go of everything is good for the mind.
+      </p>
+      <button id="showInstructionButton" class="button">Show me how</button>
+    </div>
+
+    <div id="" class="instructions text-content">
+      <h1>Breathing is easy</h1>
+      <p>
+        When you're ready, start with a few deep breaths and then gently close your eyes.
+        <br /><br />
+        Try to breathe naturally. Rather than letting the mind leading the breath, let the breath leading the mind.
+        <br /><br />
+        Notice the sensation of the breath, where you feel it in the body and try to follow that raising and falling sensation.
+        <br /><br />
+        If you like you can count the breaths to help you maintain the focus. Counting 1 on the inhale,  2 on the exhale, all the way up to ten before you start over.
+      </p>
+      <button id="startButton" class="button">I'm ready, let's start</button>
+    </div>
+
+    <div class="timer">
+      <svg width="200px" height="200px" viewBox="0 0 300 300">
+        <g fill="none" stroke-width="50" id="circleGroup">
+          <circle cx="150" cy="150" r="100" stroke="#FAADA9"/>
+          <circle id="seconds" cx="150" cy="150" r="100" stroke="#DDD6F3" transform="rotate(-90 150 150)"/>
+        </g>
+      </svg>
+    </div>
+  </main>
+
+  <div class="btn pause">
+    <span class="bar bar-1"></span>
+    <span class="bar bar-2"></span>				
+  </div>
+
+  <script src="js/main.js"/></script>
+
+</body>
+</html>
