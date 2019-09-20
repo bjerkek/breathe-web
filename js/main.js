@@ -5,6 +5,7 @@ const startButton = document.getElementById('startButton')
 const playPauseButton = document.getElementById('playPauseButton')
 const intro = document.querySelector('.intro')
 const instructions = document.querySelector('.instructions')
+const wellDone = document.querySelector('.well-done')
 const timerBg = document.querySelector('.timer-bg')
 const timer = document.querySelector('.timer')
 const main = document.querySelector('main')
@@ -26,6 +27,8 @@ function showInstructions () {
 }
 
 function startBreathing () {
+  window.scrollTo(0, 0)
+
   instructions.classList.remove('fade-in')
   instructions.classList.add('fade-out')
   document.querySelector('body').classList.add('bg-animated')
@@ -36,6 +39,7 @@ function startBreathing () {
   timerBg.style.setProperty('top', `50%`)
   timerBg.style.setProperty('margin-left', '-100px')
   timerBg.style.setProperty('margin-top', '-100px')
+  timerBg.style.setProperty('border-radius', '100px')
 
   timer.style.display = 'block'
   timer.classList.add('fade-in')
@@ -50,10 +54,9 @@ function startBreathing () {
     if (seconds > duration) {
       clearInterval(countdown)
       audio.pause()
-      // TODO: tell the user well done
-      togglePause() // Or remove and tell the user well done, redirect to another page width the option of restarting
       
       seconds = 0
+      doneBreathing()
       return
     }
     
@@ -65,6 +68,22 @@ function startBreathing () {
   }, 1000)
 
   audio.play()
+}
+
+function doneBreathing () {
+  playPauseButton.style.display = 'none'
+  timer.style.display = 'none'
+
+  timerBg.style.setProperty('height', `${mainCoords.height}px`)
+  timerBg.style.setProperty('width', `${mainCoords.width}px`)
+  timerBg.style.setProperty('left', '0')
+  timerBg.style.setProperty('top', '0')
+  timerBg.style.setProperty('margin-left', '0')
+  timerBg.style.setProperty('margin-top', '0')
+  timerBg.style.setProperty('border-radius', '0')
+
+  wellDone.style.display = 'block'
+  wellDone.classList.add('fade-in')
 }
 
 function animateCountdown (duration) {
@@ -107,7 +126,6 @@ function pause () {
   clearInterval(countdown)
   audio.pause()
 }
-
 
 showInstructionButton.addEventListener('click', showInstructions)
 startButton.addEventListener('click', startBreathing)
