@@ -2,7 +2,7 @@
 
 const showInstructionButton = document.getElementById('showInstructionButton')
 const startButton = document.getElementById('startButton')
-const btn = document.querySelector('.btn')
+const playPauseButton = document.getElementById('playPauseButton')
 const intro = document.querySelector('.intro')
 const instructions = document.querySelector('.instructions')
 const timerBg = document.querySelector('.timer-bg')
@@ -12,7 +12,7 @@ const mainCoords = main.getBoundingClientRect()
 
 let countdown
 let seconds = 0
-const duration = 10
+const duration = 120
 
 const audio = new Audio('./sound/rain.mp3')
 
@@ -39,6 +39,9 @@ function startBreathing () {
 
   timer.style.display = 'block'
   timer.classList.add('fade-in')
+
+  playPauseButton.style.display = 'block'
+  playPauseButton.classList.add('fade-in')
 
   clearInterval(countdown)
 
@@ -87,19 +90,20 @@ function animatePuls () {
 }
 
 function togglePause () {
-  if (btn.classList.contains('pause')) {
-    btn.classList.add('play')
-    btn.classList.remove('pause')
-
+  if (playPauseButton.classList.contains('pause')) {
+    playPauseButton.classList.add('play')
+    playPauseButton.classList.remove('pause')
     pause()
   } else {
-    btn.classList.add('pause')
-    btn.classList.remove('play')
+    playPauseButton.classList.add('pause')
+    playPauseButton.classList.remove('play')
     startBreathing()
   }
 }
 
 function pause () {
+  const elem = document.querySelector('circle')
+  elem.style.animationPlayState = 'paused'
   clearInterval(countdown)
   audio.pause()
 }
@@ -107,4 +111,4 @@ function pause () {
 
 showInstructionButton.addEventListener('click', showInstructions)
 startButton.addEventListener('click', startBreathing)
-btn.addEventListener('click', togglePause)
+playPauseButton.addEventListener('click', togglePause)
