@@ -20,7 +20,6 @@ main {
   max-width: 400px;
   padding: 40px;
   margin: 0 auto;
-  transition: opacity 1s ease-in-out;
   line-height: 1.5;
 }
 
@@ -60,6 +59,11 @@ circle {
   display: none;
 }
 
+.well-done {
+  opacity: 0;
+  display: none;
+}
+
 .timer {
   height: 200px;
   width: 200px;
@@ -80,7 +84,6 @@ circle {
   top: 0%;
   height: 0;
   width: 0;
-  border-radius: 100px;
 }
 
 .fade-out {
@@ -108,7 +111,7 @@ circle {
 
 .fade-in {
   opacity: 1;
-  animation: fade-in 2s;
+  animation: fade-in 4s;
   animation-fill-mode: forwards;
 }
 
