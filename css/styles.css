@@ -149,7 +149,7 @@ circle {
   100%{background-position:0% 50%}
 }
 
-.btn {
+#playPauseButton {
   position: absolute;
   left: 50%;
   margin-left: -20px;
@@ -159,9 +159,10 @@ circle {
   height: 40px;
   cursor: pointer;
   transition: border 0.1s ease-in-out;
+  display: none;
 }
 
-.btn .bar {
+#playPauseButton .bar {
   display: inline-block;
   position: absolute;
   top: 10px;
@@ -176,19 +177,19 @@ circle {
   transition: transform 0.4s ease-in-out, background 0.1s ease-in-out;
   transition: transform 0.4s ease-in-out, background 0.1s ease-in-out, -webkit-transform 0.4s ease-in-out;
 }
-.btn.pause .bar-1 {
+#playPauseButton.pause .bar-1 {
   -webkit-transform: translateX(13.5px) translateY(0px) rotate(0deg);
           transform: translateX(13.5px) translateY(0px) rotate(0deg);
 }
-.btn.pause .bar-2 {
+#playPauseButton.pause .bar-2 {
   -webkit-transform: translateX(24px) translateY(0px) rotate(0deg);
           transform: translateX(24px) translateY(0px) rotate(0deg);
 }
-.btn.play .bar-1 {
+#playPauseButton.play .bar-1 {
   -webkit-transform: translateX(20px) translateY(-5px) rotate(-55deg);
           transform: translateX(20px) translateY(-5px) rotate(-55deg);
 }
-.btn.play .bar-2 {
+#playPauseButton.play .bar-2 {
   -webkit-transform: translateX(20px) translateY(5px) rotate(-125deg);
           transform: translateX(20px) translateY(5px) rotate(-125deg);
 }
