@@ -1,2 +1,2 @@
-# breathe-web
-Breathing guide (CSS animation training)
+# Breathing Guide
+CSS animation training :)
