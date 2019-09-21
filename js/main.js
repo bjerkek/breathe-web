@@ -35,8 +35,8 @@ function startBreathing () {
 
   timerBg.style.setProperty('height', '200px')
   timerBg.style.setProperty('width', '200px')
-  timerBg.style.setProperty('left', `50%`)
-  timerBg.style.setProperty('top', `50%`)
+  timerBg.style.setProperty('left', '50%')
+  timerBg.style.setProperty('top', '50%')
   timerBg.style.setProperty('margin-left', '-100px')
   timerBg.style.setProperty('margin-top', '-100px')
   timerBg.style.setProperty('border-radius', '100px')
@@ -121,8 +121,6 @@ function togglePause () {
 }
 
 function pause () {
-  const elem = document.querySelector('circle')
-  elem.style.animationPlayState = 'paused'
   clearInterval(countdown)
   audio.pause()
 }
